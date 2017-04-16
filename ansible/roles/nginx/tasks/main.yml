@@ -3,6 +3,24 @@
   apt:
     pkg: nginx
     state: latest
+
+- name: Remove default NGINX config
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+  notify: Reload NGINX
+
+- name: Deploy NGINX config
+  template:
+    src: nginx.conf
+    dest: /etc/nginx/sites-enabled/web.conf
+  notify: Reload NGINX
+
+- name: Deploy NGINX template
+  template:
+    src: index.html
+    dest: /var/www/html/index.html
+
 - name: Starting NGINX
   service:
     name: nginx
