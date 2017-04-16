@@ -1,0 +1,5 @@
+---
+- name: "Setup / Reload NGINX settings"
+  hosts: all
+  roles:
+    - nginx

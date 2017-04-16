@@ -4,10 +4,7 @@
   roles:
     - init
 
-- name: "Setup NGINX"
-  hosts: all
-  roles:
-    - nginx
+- include: nginx.yml
 
 - name: "Setup Ruby"
   hosts: all

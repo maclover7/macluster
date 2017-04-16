@@ -1,5 +1,5 @@
 ---
-- name: Installing NGINX
+- name: Instal NGINX
   remote_user: deployer
   apt:
     pkg: nginx
@@ -12,20 +12,14 @@
     state: absent
   notify: Reload NGINX
 
-- name: Deploy NGINX config
+- name: Push NGINX config
   remote_user: deployer
   template:
     src: nginx.conf
     dest: /etc/nginx/sites-enabled/web.conf
   notify: Reload NGINX
 
-- name: Deploy NGINX template
-  remote_user: deployer
-  template:
-    src: index.html
-    dest: /var/www/html/index.html
-
-- name: Starting NGINX
+- name: Start NGINX
   remote_user: deployer
   service:
     name: nginx
