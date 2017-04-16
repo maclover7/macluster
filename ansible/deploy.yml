@@ -1,4 +1,5 @@
 ---
-- hosts: all
+- name: "Deploy the application"
+  hosts: all
   roles:
     - deploy
