@@ -1,0 +1,6 @@
+---
+- name: Install packages
+  remote_user: deployer
+  command: "bundle install"
+  args:
+    chdir: "/var/www/{{ application }}"

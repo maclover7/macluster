@@ -1,0 +1,21 @@
+---
+- name: Stop Puma server
+  shell: kill -9 $(cat puma.pid)
+  args:
+    chdir: "/var/www/{{ application }}"
+
+- name: Delete directory
+  remote_user: deployer
+  file:
+    path: "/var/www/{{ application }}"
+    state: absent
+
+- name: Create directory
+  remote_user: deployer
+  file:
+    path: "/var/www/{{ application }}"
+    state: directory
+
+- name: Add Git remote
+  remote_user: deployer
+  shell: "cd /var/www/{{ application }} && git clone https://github.com/{{ applicationFull }}.git ."

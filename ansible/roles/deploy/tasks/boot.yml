@@ -1,0 +1,11 @@
+---
+- name: Boot server
+  command: "bundle exec puma --daemon --bind unix://puma.sock --pidfile puma.pid"
+  args:
+    chdir: "/var/www/{{ application }}"
+
+- name: Change socket permissions
+  file:
+    path: "/var/www/{{ application }}/puma.sock"
+    state: file
+    mode: 0666
