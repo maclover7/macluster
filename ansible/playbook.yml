@@ -1,10 +1,15 @@
 ---
-- hosts: all
+- name: "Misc tasks"
+  hosts: all
   roles:
     - init
+- name: "Setup NGINX"
+  hosts: all
+  roles:
     - nginx
+
+- name: "Setup Ruby"
+  hosts: all
+  roles:
     - { role: geerlingguy.ruby, ruby_install_bundler: true }
     - ruby
-  tasks:
-  - name: ping server
-    command: "/bin/echo 0"
