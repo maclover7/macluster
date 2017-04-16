@@ -22,6 +22,14 @@ ansible-galaxy install -r ansible/requirements.yml -p ansible/roles
 ansible-playbook ansible/playbook.yml -i ansible/hosts
 ```
 
+### deploy
+
+To deploy the application, run:
+
+```
+ansible-playbook ansible/deploy.yml -i ansible/hosts
+```
+
 ### License
 
 Copyright (c) 2016 Jon Moss under the MIT License.

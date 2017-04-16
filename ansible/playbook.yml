@@ -5,7 +5,6 @@
     - nginx
     - { role: geerlingguy.ruby, ruby_install_bundler: true }
     - ruby
-    - sinatra
   tasks:
   - name: ping server
     command: "/bin/echo 0"
