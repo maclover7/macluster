@@ -3,6 +3,8 @@
   roles:
     - init
     - nginx
+    - { role: geerlingguy.ruby, ruby_install_bundler: true }
+    - ruby
   tasks:
   - name: ping server
     command: "/bin/echo 0"

@@ -1,0 +1,3 @@
+---
+- name: Test Ruby installation
+  command: ruby -e 'puts "hello"'
