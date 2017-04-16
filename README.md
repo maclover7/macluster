@@ -10,7 +10,7 @@ projects.
 For first-time setup of a server, run:
 
 ```
-ansible-playbook ansible/setup.yml -i ansible/hosts
+rake ansible:playbook:setup
 ```
 
 ### playbook
@@ -18,16 +18,15 @@ ansible-playbook ansible/setup.yml -i ansible/hosts
 For advanced server setup tasks, run:
 
 ```
-ansible-galaxy install -r ansible/requirements.yml -p ansible/roles
-ansible-playbook ansible/playbook.yml -i ansible/hosts
+rake ansible:playbook:playbook
 ```
 
 ### deploy
 
-To deploy the application, run:
+To deploy an application, run:
 
 ```
-ansible-playbook ansible/deploy.yml -i ansible/hosts --extra-vars="application=myApp applicationFull=myApp/myApp" --ask-value-pass
+rake ansible:playbook:deploy[myApp,myApp/myApp]
 ```
 
 ## Deploying a new application
@@ -42,4 +41,4 @@ ansible-playbook ansible/deploy.yml -i ansible/hosts --extra-vars="application=m
 
 ### License
 
-Copyright (c) 2016 Jon Moss under the MIT License.
+Copyright (c) 2017+ Jon Moss under the MIT License.
