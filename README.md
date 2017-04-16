@@ -39,6 +39,14 @@ rake ansible:playbook:deploy[myApp,myApp/myApp]
    playbook.
 4. That should be it!
 
+## Editing application secrets
+
+1. Edit the encrypted file: `ansible-vault edit ansible/group_vars/production/vault.yml`.
+2. Go to `ansible/group_vars/production/vars` and make changes as
+   necessary.
+3. Make sure `ansible/roles/deploy/tasks/vars.yml` is updated
+   accordingly.
+
 ### License
 
 Copyright (c) 2017+ Jon Moss under the MIT License.
