@@ -13,15 +13,12 @@ For first-time setup of a server, run:
 ansible-playbook ansible/setup.yml -i ansible/hosts
 ```
 
-Install roles from Ansible Galaxy:
+### playbook
 
-```bash
-ansible-galaxy install -r ansible/requirements.yml -p ansible/roles
+For advanced server setup tasks, run:
+
 ```
-
-To run the playbook, use the following command:
-
-```bash
+ansible-galaxy install -r ansible/requirements.yml -p ansible/roles
 ansible-playbook ansible/playbook.yml -i ansible/hosts
 ```
 
