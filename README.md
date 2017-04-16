@@ -27,7 +27,7 @@ ansible-playbook ansible/playbook.yml -i ansible/hosts
 To deploy the application, run:
 
 ```
-ansible-playbook ansible/deploy.yml -i ansible/hosts --extra-vars="application=myApp applicationFull=myApp/myApp"
+ansible-playbook ansible/deploy.yml -i ansible/hosts --extra-vars="application=myApp applicationFull=myApp/myApp" --ask-value-pass
 ```
 
 ## Deploying a new application

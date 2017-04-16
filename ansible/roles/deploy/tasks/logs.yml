@@ -1,0 +1,28 @@
+---
+- name: Setup rsyslog
+  remote_user: deployer
+  lineinfile:
+    path: /etc/rsyslog.conf
+    line: '*.*          @logs5.papertrailapp.com:36870'
+
+- name: Restart rsyslog
+  remote_user: deployer
+  command: service rsyslog restart
+
+- name: Create log file
+  remote_user: deployer
+  command: touch app.log
+  args:
+    chdir: "/var/www/{{ application }}"
+
+- name: Stop log service
+  remote_user: deployer
+  shell: kill -9 $(cat /var/run/remote_syslog.pid)
+
+- name: Start log service
+  remote_user: deployer
+  command: 'remote_syslog \
+  -p {{ powergpa_PAPERTRAIL_PORT }} \
+  -d {{ powergpa_PAPERTRAIL_HOST }} \
+  --pid-file=/var/run/remote_syslog.pid \
+  /var/www/{{ application }}/app.log'

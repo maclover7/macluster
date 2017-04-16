@@ -2,4 +2,6 @@
 - include: init.yml
 - include: git.yml
 - include: bundler.yml
+- include: vars.yml
 - include: boot.yml
+- include: logs.yml

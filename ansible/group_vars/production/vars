@@ -1,0 +1,9 @@
+---
+powergpa_LIBRATO_PASSWORD: "{{ vault_powergpa_LIBRATO_PASSWORD }}"
+powergpa_LIBRATO_TOKEN: "{{ vault_powergpa_LIBRATO_TOKEN }}"
+powergpa_LIBRATO_USER: "{{ vault_powergpa_LIBRATO_USER }}"
+powergpa_PAPERTRAIL_HOST: "{{ vault_powergpa_PAPERTRAIL_HOST }}"
+powergpa_PAPERTRAIL_PORT: "{{ vault_powergpa_PAPERTRAIL_PORT }}"
+powergpa_ROLLBAR_ACCESS_TOKEN: "{{ vault_powergpa_ROLLBAR_ACCESS_TOKEN }}"
+powergpa_ROLLBAR_ENDPOINT: "{{ vault_powergpa_ROLLBAR_ENDPOINT }}"
+powergpa_SESSION_SECRET: "{{ vault_powergpa_SESSION_SECRET }}"

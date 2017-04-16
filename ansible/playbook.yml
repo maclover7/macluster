@@ -3,6 +3,7 @@
   hosts: all
   roles:
     - init
+
 - name: "Setup NGINX"
   hosts: all
   roles:

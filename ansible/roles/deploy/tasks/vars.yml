@@ -1,0 +1,13 @@
+---
+- name: Export environment variables
+  shell: "{{ item }}"
+  with_items:
+    - "echo export RACK_ENV=production >> ~/.bashrc"
+    - "echo export LIBRATO_TOKEN={{ powergpa_LIBRATO_PASSWORD }} >> ~/.bashrc"
+    - "echo export LIBRATO_USER={{ powergpa_LIBRATO_USER }} >> ~/.bashrc"
+    - "echo export PAPERTRAIL_HOST={{ powergpa_PAPERTRAIL_HOST }} >> ~/.bashrc"
+    - "echo export PAPERTRAIL_PORT={{ powergpa_PAPERTRAIL_PORT }} >> ~/.bashrc"
+    - "echo export ROLLBAR_ACCESS_TOKEN={{ powergpa_ROLLBAR_ACCESS_TOKEN }} >> ~/.bashrc"
+    - "echo export ROLLBAR_ENDPOINT={{ powergpa_ROLLBAR_ENDPOINT }} >> ~/.bashrc"
+    - "echo export SESSION_SECRET={{ powergpa_SESSION_SECRET }} >> ~/.bashrc"
+    - ". ~/.bashrc"
