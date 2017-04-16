@@ -1,8 +1,13 @@
 ---
+- stat:
+    path: "/var/www/{{ application }}"
+  register: appDirectory
+
 - name: Stop Puma server
   shell: kill -9 $(cat puma.pid)
   args:
     chdir: "/var/www/{{ application }}"
+  when: appDirectory.isdir is defined
 
 - name: Delete directory
   remote_user: deployer
