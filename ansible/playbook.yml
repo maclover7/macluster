@@ -2,6 +2,7 @@
 - hosts: all
   roles:
     - init
+    - nginx
   tasks:
   - name: ping server
     command: "/bin/echo 0"

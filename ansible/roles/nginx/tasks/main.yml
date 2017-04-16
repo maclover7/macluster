@@ -1,0 +1,9 @@
+---
+- name: Installing NGINX
+  apt:
+    pkg: nginx
+    state: latest
+- name: Starting NGINX
+  service:
+    name: nginx
+    state: started
