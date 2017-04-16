@@ -44,7 +44,3 @@
     path: /var/www/sinatra/puma.sock
     state: file
     mode: 0666
-  #command: "chmod 0666 puma.sock"
-  #args:
-    #chdir: /var/www/sinatra
-

@@ -3,6 +3,16 @@
 @maclover7's Ansible playbooks for the "macluster" (haha) of personal
 projects.
 
+## Running playbooks
+
+### setup
+
+For first-time setup of a server, run:
+
+```
+ansible-playbook ansible/setup.yml -i ansible/hosts
+```
+
 Install roles from Ansible Galaxy:
 
 ```bash

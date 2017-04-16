@@ -1,0 +1,6 @@
+---
+- name: "First time setup tasks"
+  hosts: all
+  remote_user: root
+  roles:
+    - setup
