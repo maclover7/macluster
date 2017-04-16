@@ -1,0 +1,5 @@
+---
+- hosts: all
+  tasks:
+  - name: ping server
+    command: "/bin/echo 0"

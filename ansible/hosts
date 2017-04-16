@@ -1,0 +1,5 @@
+[production]
+macluster1.jonathanmoss.me
+
+[production:vars]
+ansible_ssh_user=root
