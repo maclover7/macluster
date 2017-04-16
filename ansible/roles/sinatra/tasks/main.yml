@@ -1,0 +1,20 @@
+---
+- name: Create directory
+  remote_user: deployer
+  file:
+    path: /var/www/sinatra
+    state: directory
+
+- name: Copy files
+  remote_user: deployer
+  template:
+    src: Gemfile
+    dest: /var/www/sinatra/Gemfile
+
+- name: Install packages
+  remote_user: deployer
+  command: "bundle install"
+  args:
+    chdir: /var/www/sinatra
+
+#- name: Boot server

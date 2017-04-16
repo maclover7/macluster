@@ -1,3 +1,4 @@
 ---
 - name: Test Ruby installation
+  remote_user: deployer
   command: ruby -e 'puts "hello"'

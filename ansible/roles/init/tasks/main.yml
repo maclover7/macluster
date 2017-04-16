@@ -1,3 +1,15 @@
 ---
 - name: Update apt
   apt: update_cache=yes
+
+- name: Create deployer user
+  user:
+    name: deployer
+    state: present
+    groups: "sudo"
+
+- name: Set authorized SSH key for deployer user
+  authorized_key:
+    user: deployer
+    state: present
+    key: https://github.com/maclover7.keys
