@@ -23,4 +23,6 @@
 
 - name: Add Git remote
   remote_user: deployer
-  shell: "cd /var/www/{{ application }} && git clone https://github.com/{{ applicationFull }}.git ."
+  shell: "git clone https://github.com/{{ applicationFull }}.git ."
+  args:
+    chdir: "/var/www/{{ application }}"

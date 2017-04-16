@@ -7,13 +7,15 @@
 
 - name: Restart rsyslog
   remote_user: deployer
-  command: service rsyslog restart
+  service:
+    name: rsyslog
+    state: restarted
 
 - name: Create log file
   remote_user: deployer
-  command: touch app.log
-  args:
-    chdir: "/var/www/{{ application }}"
+  file:
+    path: "/var/www/{{ application }}/app.log"
+    state: touch
 
 - name: Stop log service
   remote_user: deployer
